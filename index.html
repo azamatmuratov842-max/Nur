@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharapat English — Learn English the Smart Way</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- AUTH SCREEN -->
+<div id="auth-screen" class="screen active">
+  <div class="auth-bg">
+    <div class="auth-orb orb1"></div>
+    <div class="auth-orb orb2"></div>
+    <div class="auth-orb orb3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="auth-container">
+    <div class="auth-logo">
+      <div class="logo-mark">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="20" fill="url(#logoGrad)"/>
+          <path d="M12 26L20 14L28 26" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14.5 22H25.5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40">
+              <stop offset="0%" stop-color="#0d7b83"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-main">Sharapat</span>
+        <span class="logo-sub">English</span>
+      </div>
+    </div>
+    <div class="auth-card">
+      <div class="auth-headline">
+        <h1>Master English.<br/><em>Your Way.</em></h1>
+        <p>Join thousands learning English from zero to fluency with AI-powered lessons, real progress tracking, and expert-crafted content.</p>
+      </div>
+      <div class="auth-stats">
+        <div class="stat"><span class="stat-num">12K+</span><span class="stat-label">Learners</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">350+</span><span class="stat-label">Lessons</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Rating</span></div>
+      </div>
+      <button class="google-btn" id="google-signin-btn">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M19.6 10.23c0-.68-.06-1.36-.18-2H10v3.77h5.38a4.6 4.6 0 01-2 3.02v2.5h3.23c1.9-1.74 2.99-4.3 2.99-7.29z" fill="#4285F4"/>
+          <path d="M10 20c2.7 0 4.96-.9 6.62-2.44l-3.23-2.5c-.9.6-2.05.96-3.39.96-2.6 0-4.8-1.76-5.59-4.12H1.07v2.58A10 10 0 0010 20z" fill="#34A853"/>
+          <path d="M4.41 11.9A6.02 6.02 0 014.1 10c0-.66.11-1.3.31-1.9V5.52H1.07A10 10 0 000 10c0 1.61.39 3.14 1.07 4.48l3.34-2.58z" fill="#FBBC05"/>
+          <path d="M10 3.96a5.4 5.4 0 013.82 1.5L16.7 2.6A9.6 9.6 0 0010 0a10 10 0 00-8.93 5.52l3.34 2.58C5.2 5.72 7.4 3.96 10 3.96z" fill="#EA4335"/>
+        </svg>
+        Continue with Google
+      </button>
+      <p class="auth-terms">By continuing, you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a>. Free to start — premium plans from 199 KGS.</p>
+    </div>
+    <div class="auth-features">
+      <div class="feat"><span>🎯</span> AI-powered grammar correction</div>
+      <div class="feat"><span>📈</span> Real-time progress tracking</div>
+      <div class="feat"><span>🏆</span> XP leaderboard system</div>
+      <div class="feat"><span>📜</span> Completion certificates</div>
+    </div>
+  </div>
+</div>
+
+<!-- APP SHELL -->
+<div id="app-shell" class="screen">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="20" fill="url(#logoGrad2)"/>
+          <path d="M12 26L20 14L28 26" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14.5 22H25.5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="logoGrad2" x1="0" y1="0" x2="40" y2="40">
+              <stop offset="0%" stop-color="#0d7b83"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Sharapat</span>
+      </div>
+      <button class="sidebar-close" id="sidebar-close">✕</button>
+    </div>
+    <div class="user-mini" id="sidebar-user">
+      <div class="user-avatar-mini" id="sidebar-avatar"></div>
+      <div class="user-info-mini">
+        <span class="user-name-mini" id="sidebar-name">Loading...</span>
+        <span class="user-level-mini" id="sidebar-level">Beginner</span>
+      </div>
+      <div class="user-xp-mini" id="sidebar-xp">0 XP</div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active" data-section="dashboard">
+        <span class="nav-icon">🏠</span><span>Dashboard</span>
+      </a>
+      <a href="#" class="nav-item" data-section="courses">
+        <span class="nav-icon">📚</span><span>Courses</span>
+      </a>
+      <a href="#" class="nav-item" data-section="ai-chat">
+        <span class="nav-icon">🤖</span><span>AI Teacher</span>
+        <span class="nav-badge">AI</span>
+      </a>
+      <a href="#" class="nav-item" data-section="leaderboard">
+        <span class="nav-icon">🏆</span><span>Leaderboard</span>
+      </a>
+      <a href="#" class="nav-item" data-section="certificates">
+        <span class="nav-icon">📜</span><span>Certificates</span>
+      </a>
+      <a href="#" class="nav-item" data-section="profile">
+        <span class="nav-icon">👤</span><span>Profile</span>
+      </a>
+      <div class="nav-divider"></div>
+      <a href="#" class="nav-item premium-nav" data-section="premium">
+        <span class="nav-icon">⭐</span><span>Go Premium</span>
+        <span class="nav-badge gold">KGS</span>
+      </a>
+      <a href="#" class="nav-item admin-only hidden" data-section="admin" id="admin-nav-link">
+        <span class="nav-icon">⚙️</span><span>Admin Panel</span>
+        <span class="nav-badge red">ADMIN</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="signout-btn" id="signout-btn">
+        <span>↩</span> Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <button class="menu-btn" id="menu-btn">☰</button>
+      <div class="topbar-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search lessons, topics..." id="search-input" />
+        <div class="search-dropdown hidden" id="search-dropdown"></div>
+      </div>
+      <div class="topbar-actions">
+        <button class="notif-btn" id="notif-btn">
+          🔔
+          <span class="notif-dot hidden" id="notif-dot"></span>
+        </button>
+        <div class="topbar-user" id="topbar-user" data-section="profile">
+          <div class="topbar-avatar" id="topbar-avatar"></div>
+          <span id="topbar-name">...</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- NOTIFICATIONS PANEL -->
+    <div class="notif-panel hidden" id="notif-panel">
+      <div class="notif-header"><h3>Notifications</h3><button id="clear-notifs">Clear all</button></div>
+      <div class="notif-list" id="notif-list">
+        <div class="notif-empty">No notifications yet</div>
+      </div>
+    </div>
+
+    <!-- PAGE SECTIONS -->
+    <div class="page-content">
+
+      <!-- DASHBOARD -->
+      <section class="section active" id="section-dashboard">
+        <div class="section-header">
+          <h2 id="dashboard-greeting">Good morning! 👋</h2>
+          <p>Continue your English journey today.</p>
+        </div>
+        <div class="xp-banner" id="xp-banner">
+          <div class="xp-banner-left">
+            <div class="xp-circle" id="xp-circle">
+              <svg viewBox="0 0 100 100">
+                <circle class="xp-track" cx="50" cy="50" r="42" fill="none" stroke-width="8"/>
+                <circle class="xp-fill" id="xp-svg-fill" cx="50" cy="50" r="42" fill="none" stroke-width="8" stroke-dasharray="264" stroke-dashoffset="264"/>
+              </svg>
+              <div class="xp-circle-text">
+                <span id="xp-pct">0%</span>
+                <small>to next level</small>
+              </div>
+            </div>
+            <div class="xp-info">
+              <h3 id="user-display-name">Welcome!</h3>
+              <p class="level-badge" id="level-badge">🌱 Beginner</p>
+              <div class="xp-row">
+                <span class="xp-count" id="xp-count">0 XP</span>
+                <span class="xp-next" id="xp-next">/ 500 XP</span>
+              </div>
+            </div>
+          </div>
+          <div class="xp-banner-right">
+            <div class="streak-box">
+              <div class="streak-fire">🔥</div>
+              <div class="streak-num" id="streak-num">0</div>
+              <div class="streak-label">Day Streak</div>
+            </div>
+            <div class="streak-box">
+              <div class="streak-fire">📚</div>
+              <div class="streak-num" id="lessons-done">0</div>
+              <div class="streak-label">Lessons Done</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="continue-section" id="continue-section">
+          <h3>Continue Learning</h3>
+          <div class="continue-card" id="continue-card">
+            <div class="continue-icon">▶️</div>
+            <div class="continue-info">
+              <h4 id="continue-title">Start your first lesson!</h4>
+              <p id="continue-desc">Begin with English Basics</p>
+              <div class="continue-progress">
+                <div class="continue-bar" id="continue-bar" style="width:0%"></div>
+              </div>
+            </div>
+            <button class="btn-primary" id="continue-btn">Start →</button>
+          </div>
+        </div>
+
+        <div class="recommended-section">
+          <h3>Recommended for You</h3>
+          <div class="courses-grid" id="recommended-grid"></div>
+        </div>
+
+        <div class="dashboard-bottom">
+          <div class="recent-activity">
+            <h3>Recent Activity</h3>
+            <div class="activity-list" id="activity-list">
+              <div class="activity-empty">Complete your first lesson to see activity here.</div>
+            </div>
+          </div>
+          <div class="leaderboard-mini">
+            <h3>Top Learners <a href="#" class="see-all" data-section="leaderboard">See all →</a></h3>
+            <div class="mini-leaderboard" id="mini-leaderboard"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COURSES -->
+      <section class="section" id="section-courses">
+        <div class="section-header">
+          <h2>All Courses 📚</h2>
+          <p>From absolute beginner to IELTS ready.</p>
+        </div>
+        <div class="course-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="free">Free</button>
+          <button class="filter-btn" data-filter="premium">Premium</button>
+          <button class="filter-btn" data-filter="beginner">Beginner</button>
+          <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+          <button class="filter-btn" data-filter="advanced">Advanced</button>
+        </div>
+        <div class="courses-grid full" id="courses-grid"></div>
+      </section>
+
+      <!-- LESSON VIEWER -->
+      <section class="section" id="section-lesson">
+        <button class="back-btn" id="lesson-back">← Back to Courses</button>
+        <div class="lesson-layout">
+          <div class="lesson-main">
+            <div class="lesson-header-info">
+              <div class="lesson-breadcrumb" id="lesson-breadcrumb">Course / Lesson</div>
+              <h2 id="lesson-title">Lesson Title</h2>
+              <div class="lesson-meta" id="lesson-meta"></div>
+            </div>
+            <div class="lesson-video-wrap" id="lesson-video-wrap">
+              <div class="video-placeholder" id="video-placeholder">
+                <div class="play-icon">▶</div>
+                <p>Video content loads here</p>
+              </div>
+              <iframe id="lesson-video-iframe" class="hidden" allowfullscreen></iframe>
+            </div>
+            <div class="lesson-tabs">
+              <button class="tab-btn active" data-tab="content">Content</button>
+              <button class="tab-btn" data-tab="quiz">Quiz</button>
+              <button class="tab-btn" data-tab="notes">Notes</button>
+              <button class="tab-btn" data-tab="vocabulary">Vocabulary</button>
+            </div>
+            <div class="tab-content" id="tab-content">
+              <div class="lesson-content" id="lesson-content-body"></div>
+            </div>
+            <div class="tab-content hidden" id="tab-quiz">
+              <div class="quiz-container" id="quiz-container"></div>
+            </div>
+            <div class="tab-content hidden" id="tab-notes">
+              <div class="notes-area">
+                <textarea id="lesson-notes" placeholder="Write your notes here..."></textarea>
+                <button class="btn-primary" id="save-notes-btn">Save Notes</button>
+              </div>
+            </div>
+            <div class="tab-content hidden" id="tab-vocabulary">
+              <div class="vocab-grid" id="vocab-grid"></div>
+            </div>
+            <div class="lesson-actions">
+              <button class="btn-secondary" id="prev-lesson-btn">← Previous</button>
+              <button class="btn-primary" id="complete-lesson-btn">✓ Mark Complete</button>
+              <button class="btn-secondary" id="next-lesson-btn">Next →</button>
+            </div>
+          </div>
+          <div class="lesson-sidebar">
+            <div class="lesson-list-panel">
+              <h4>Lesson List</h4>
+              <div id="lesson-list-sidebar"></div>
+            </div>
+            <div class="bookmark-section">
+              <button class="bookmark-btn" id="bookmark-btn">🔖 Bookmark</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI CHAT -->
+      <section class="section" id="section-ai-chat">
+        <div class="ai-chat-layout">
+          <div class="ai-chat-header">
+            <div class="ai-avatar">🤖</div>
+            <div>
+              <h2>AI English Teacher</h2>
+              <p>Powered by Claude · Grammar · IELTS · Writing · Speaking</p>
+            </div>
+            <button class="btn-secondary small" id="clear-chat-btn">New Chat</button>
+          </div>
+          <div class="chat-body" id="chat-body">
+            <div class="chat-welcome">
+              <div class="chat-bot-icon">🎓</div>
+              <h3>Hello! I'm your AI English Teacher</h3>
+              <p>Ask me anything about English — grammar, vocabulary, IELTS prep, writing feedback, or conversation practice!</p>
+              <div class="quick-questions">
+                <button class="quick-q" data-q="Check my grammar: I go to school yesterday">Check grammar</button>
+                <button class="quick-q" data-q="Give me 10 advanced English vocabulary words with examples">New vocabulary</button>
+                <button class="quick-q" data-q="How do I write a good IELTS Task 2 essay?">IELTS tips</button>
+                <button class="quick-q" data-q="What's the difference between 'affect' and 'effect'?">Word confusion</button>
+              </div>
+            </div>
+          </div>
+          <div class="chat-input-row">
+            <textarea class="chat-input" id="chat-input" placeholder="Ask your English teacher anything..." rows="1"></textarea>
+            <button class="chat-send-btn" id="chat-send-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEADERBOARD -->
+      <section class="section" id="section-leaderboard">
+        <div class="section-header">
+          <h2>Leaderboard 🏆</h2>
+          <p>Top English learners this week.</p>
+        </div>
+        <div class="leaderboard-tabs">
+          <button class="lb-tab active" data-period="weekly">Weekly</button>
+          <button class="lb-tab" data-period="monthly">Monthly</button>
+          <button class="lb-tab" data-period="alltime">All Time</button>
+        </div>
+        <div class="leaderboard-podium" id="leaderboard-podium"></div>
+        <div class="leaderboard-list" id="leaderboard-list"></div>
+        <div class="my-rank-card" id="my-rank-card"></div>
+      </section>
+
+      <!-- CERTIFICATES -->
+      <section class="section" id="section-certificates">
+        <div class="section-header">
+          <h2>My Certificates 📜</h2>
+          <p>Complete courses to earn certificates.</p>
+        </div>
+        <div class="certificates-grid" id="certificates-grid">
+          <div class="no-certs">
+            <div class="no-certs-icon">🎓</div>
+            <h3>No certificates yet</h3>
+            <p>Complete a full course to earn your first certificate!</p>
+            <button class="btn-primary" data-section="courses">Browse Courses</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROFILE -->
+      <section class="section" id="section-profile">
+        <div class="profile-layout">
+          <div class="profile-card">
+            <div class="profile-avatar-wrap">
+              <div class="profile-avatar" id="profile-avatar"></div>
+              <label class="avatar-upload-btn" for="avatar-upload-input">📷</label>
+              <input type="file" id="avatar-upload-input" accept="image/*" class="hidden">
+            </div>
+            <h2 id="profile-name">User Name</h2>
+            <p id="profile-email">user@example.com</p>
+            <div class="profile-badge" id="profile-level-badge">🌱 Beginner</div>
+            <div class="profile-stats-row">
+              <div class="profile-stat"><span id="prof-xp">0</span><small>XP</small></div>
+              <div class="profile-stat"><span id="prof-lessons">0</span><small>Lessons</small></div>
+              <div class="profile-stat"><span id="prof-streak">0</span><small>Streak</small></div>
+              <div class="profile-stat"><span id="prof-certs">0</span><small>Certs</small></div>
+            </div>
+          </div>
+          <div class="profile-details">
+            <div class="profile-section-card">
+              <h3>XP Progress</h3>
+              <div class="big-progress-wrap">
+                <div class="big-progress-bar"><div class="big-progress-fill" id="big-progress-fill" style="width:0%"></div></div>
+                <span id="big-progress-label">0 / 500 XP to next level</span>
+              </div>
+            </div>
+            <div class="profile-section-card">
+              <h3>Progress History</h3>
+              <div class="history-list" id="history-list">
+                <p class="empty-state">No lessons completed yet.</p>
+              </div>
+            </div>
+            <div class="profile-section-card">
+              <h3>Bookmarks</h3>
+              <div class="bookmarks-list" id="bookmarks-list">
+                <p class="empty-state">No bookmarks yet.</p>
+              </div>
+            </div>
+            <div class="profile-section-card">
+              <h3>Account Settings</h3>
+              <div class="settings-list">
+                <div class="setting-row">
+                  <span>Push Notifications</span>
+                  <label class="toggle">
+                    <input type="checkbox" id="notif-toggle" checked>
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+                <div class="setting-row">
+                  <span>Email Updates</span>
+                  <label class="toggle">
+                    <input type="checkbox" id="email-toggle">
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+                <button class="btn-danger" id="signout-profile-btn">Sign Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PREMIUM -->
+      <section class="section" id="section-premium">
+        <div class="premium-hero">
+          <div class="premium-hero-bg"></div>
+          <h2>Unlock Your Full Potential ⭐</h2>
+          <p>Get unlimited access to all courses, AI teacher, and certificates.</p>
+        </div>
+        <div class="pricing-grid" id="pricing-grid">
+          <div class="pricing-card">
+            <div class="pricing-badge free">Free</div>
+            <div class="pricing-name">Starter</div>
+            <div class="pricing-price"><span class="price-num">0</span> <span class="price-curr">KGS</span></div>
+            <div class="pricing-period">Forever free</div>
+            <ul class="pricing-features">
+              <li>✓ 10 free lessons</li>
+              <li>✓ Basic grammar check</li>
+              <li>✓ Leaderboard access</li>
+              <li>✓ Progress tracking</li>
+              <li class="disabled">✗ Video lessons</li>
+              <li class="disabled">✗ IELTS preparation</li>
+              <li class="disabled">✗ AI Teacher</li>
+              <li class="disabled">✗ Certificates</li>
+            </ul>
+            <button class="btn-secondary" disabled>Current Plan</button>
+          </div>
+          <div class="pricing-card featured">
+            <div class="pricing-badge popular">Most Popular</div>
+            <div class="pricing-name">Premium</div>
+            <div class="pricing-price"><span class="price-num">199</span> <span class="price-curr">KGS/mo</span></div>
+            <div class="pricing-period">Cancel anytime</div>
+            <ul class="pricing-features">
+              <li>✓ All 350+ lessons</li>
+              <li>✓ HD Video content</li>
+              <li>✓ AI Teacher unlimited</li>
+              <li>✓ IELTS preparation</li>
+              <li>✓ Certificates PDF</li>
+              <li>✓ Priority support</li>
+              <li>✓ Offline access</li>
+              <li>✓ Speaking practice</li>
+            </ul>
+            <button class="btn-primary" data-plan="premium" id="buy-premium-btn">Subscribe Now →</button>
+          </div>
+          <div class="pricing-card">
+            <div class="pricing-badge ielts">IELTS</div>
+            <div class="pricing-name">IELTS Pro</div>
+            <div class="pricing-price"><span class="price-num">499</span> <span class="price-curr">KGS</span></div>
+            <div class="pricing-period">One-time payment</div>
+            <ul class="pricing-features">
+              <li>✓ Full IELTS course</li>
+              <li>✓ 6 mock tests</li>
+              <li>✓ Writing feedback AI</li>
+              <li>✓ Speaking simulator</li>
+              <li>✓ Band score predictor</li>
+              <li>✓ Study plan</li>
+              <li>✓ Official certificate</li>
+              <li>✓ Lifetime access</li>
+            </ul>
+            <button class="btn-primary gold" data-plan="ielts" id="buy-ielts-btn">Get IELTS Pro →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADMIN PANEL -->
+      <section class="section hidden" id="section-admin">
+        <div class="admin-layout">
+          <div class="admin-sidebar">
+            <h3>⚙️ Admin Panel</h3>
+            <nav class="admin-nav">
+              <button class="admin-nav-btn active" data-admin="overview">📊 Overview</button>
+              <button class="admin-nav-btn" data-admin="courses">📚 Manage Courses</button>
+              <button class="admin-nav-btn" data-admin="users">👥 Manage Users</button>
+              <button class="admin-nav-btn" data-admin="notifications">🔔 Notifications</button>
+              <button class="admin-nav-btn" data-admin="settings">⚙️ Site Settings</button>
+            </nav>
+          </div>
+          <div class="admin-main">
+
+            <!-- OVERVIEW -->
+            <div class="admin-panel active" id="admin-overview">
+              <h2>Platform Overview</h2>
+              <div class="admin-stats-grid" id="admin-stats-grid">
+                <div class="admin-stat-card">
+                  <div class="admin-stat-icon">👥</div>
+                  <div class="admin-stat-info">
+                    <div class="admin-stat-num" id="stat-users">—</div>
+                    <div class="admin-stat-label">Total Users</div>
+                  </div>
+                </div>
+                <div class="admin-stat-card">
+                  <div class="admin-stat-icon">📚</div>
+                  <div class="admin-stat-info">
+                    <div class="admin-stat-num" id="stat-courses">—</div>
+                    <div class="admin-stat-label">Courses</div>
+                  </div>
+                </div>
+                <div class="admin-stat-card">
+                  <div class="admin-stat-icon">📖</div>
+                  <div class="admin-stat-info">
+                    <div class="admin-stat-num" id="stat-lessons">—</div>
+                    <div class="admin-stat-label">Lessons</div>
+                  </div>
+                </div>
+                <div class="admin-stat-card">
+                  <div class="admin-stat-icon">💰</div>
+                  <div class="admin-stat-info">
+                    <div class="admin-stat-num" id="stat-revenue">—</div>
+                    <div class="admin-stat-label">Revenue (KGS)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- COURSES MANAGEMENT -->
+            <div class="admin-panel" id="admin-courses">
+              <div class="admin-panel-header">
+                <h2>Manage Courses</h2>
+                <button class="btn-primary" id="add-course-btn">+ Add Course</button>
+              </div>
+              <div class="admin-courses-list" id="admin-courses-list"></div>
+              <!-- Course Form -->
+              <div class="admin-form-modal hidden" id="course-form-modal">
+                <div class="modal-overlay"></div>
+                <div class="modal-box">
+                  <h3 id="course-form-title">Add New Course</h3>
+                  <div class="form-group">
+                    <label>Course Title</label>
+                    <input type="text" id="cf-title" placeholder="e.g. English Basics">
+                  </div>
+                  <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="cf-desc" placeholder="Course description..."></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Level</label>
+                    <select id="cf-level">
+                      <option value="beginner">Beginner</option>
+                      <option value="intermediate">Intermediate</option>
+                      <option value="advanced">Advanced</option>
+                      <option value="ielts">IELTS</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Price (KGS)</label>
+                    <input type="number" id="cf-price" placeholder="0 for free" min="0">
+                  </div>
+                  <div class="form-group">
+                    <label>Category Tags (comma separated)</label>
+                    <input type="text" id="cf-tags" placeholder="grammar, vocabulary, speaking">
+                  </div>
+                  <div class="form-group">
+                    <label>Emoji Icon</label>
+                    <input type="text" id="cf-emoji" placeholder="📚" maxlength="4">
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" id="cf-premium">
+                    <label for="cf-premium">Premium Content (locked)</label>
+                  </div>
+                  <div class="form-actions">
+                    <button class="btn-secondary" id="course-form-cancel">Cancel</button>
+                    <button class="btn-primary" id="course-form-save">Save Course</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Lesson Form -->
+              <div class="admin-form-modal hidden" id="lesson-form-modal">
+                <div class="modal-overlay"></div>
+                <div class="modal-box">
+                  <h3 id="lesson-form-title">Add Lesson</h3>
+                  <div class="form-group">
+                    <label>Lesson Title</label>
+                    <input type="text" id="lf-title" placeholder="e.g. Present Simple Tense">
+                  </div>
+                  <div class="form-group">
+                    <label>Content (HTML or text)</label>
+                    <textarea id="lf-content" rows="6" placeholder="Lesson content..."></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Video URL (YouTube embed or direct)</label>
+                    <input type="text" id="lf-video" placeholder="https://www.youtube.com/embed/...">
+                  </div>
+                  <div class="form-group">
+                    <label>Type</label>
+                    <select id="lf-type">
+                      <option value="grammar">Grammar</option>
+                      <option value="vocabulary">Vocabulary</option>
+                      <option value="reading">Reading</option>
+                      <option value="listening">Listening</option>
+                      <option value="speaking">Speaking</option>
+                      <option value="writing">Writing</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>XP Reward</label>
+                    <input type="number" id="lf-xp" placeholder="50" min="0">
+                  </div>
+                  <div class="form-group">
+                    <label>Vocabulary (JSON: [{"word":"","def":""}])</label>
+                    <textarea id="lf-vocab" rows="3" placeholder='[{"word":"Hello","def":"A greeting"}]'></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Quiz (JSON: [{"q":"","options":[""],"answer":0}])</label>
+                    <textarea id="lf-quiz" rows="3" placeholder='[{"q":"Choose correct:","options":["A","B","C"],"answer":0}]'></textarea>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" id="lf-premium">
+                    <label for="lf-premium">Premium Only</label>
+                  </div>
+                  <div class="form-actions">
+                    <button class="btn-secondary" id="lesson-form-cancel">Cancel</button>
+                    <button class="btn-primary" id="lesson-form-save">Save Lesson</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- USERS MANAGEMENT -->
+            <div class="admin-panel" id="admin-users">
+              <h2>Manage Users</h2>
+              <div class="admin-users-list" id="admin-users-list">
+                <div class="loading-spinner">Loading users...</div>
+              </div>
+            </div>
+
+            <!-- NOTIFICATIONS -->
+            <div class="admin-panel" id="admin-notifications">
+              <h2>Send Notification</h2>
+              <div class="admin-form-card">
+                <div class="form-group">
+                  <label>Notification Title</label>
+                  <input type="text" id="notif-title-input" placeholder="e.g. New course available!">
+                </div>
+                <div class="form-group">
+                  <label>Message</label>
+                  <textarea id="notif-msg-input" placeholder="Notification message..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Type</label>
+                  <select id="notif-type-input">
+                    <option value="info">Info</option>
+                    <option value="success">Success</option>
+                    <option value="promo">Promotion</option>
+                    <option value="warning">Warning</option>
+                  </select>
+                </div>
+                <button class="btn-primary" id="send-notif-btn">Send to All Users</button>
+              </div>
+              <h3 style="margin-top:2rem">Sent Notifications</h3>
+              <div id="sent-notifs-list"></div>
+            </div>
+
+            <!-- SETTINGS -->
+            <div class="admin-panel" id="admin-settings">
+              <h2>Site Settings</h2>
+              <div class="admin-form-card">
+                <div class="form-group">
+                  <label>Platform Name</label>
+                  <input type="text" id="setting-name" value="Sharapat English">
+                </div>
+                <div class="form-group">
+                  <label>Admin Email</label>
+                  <input type="text" id="setting-admin-email" readonly>
+                </div>
+                <div class="form-group">
+                  <label>Hero Headline</label>
+                  <input type="text" id="setting-headline" placeholder="Master English. Your Way.">
+                </div>
+                <div class="form-group">
+                  <label>Premium Price (KGS/mo)</label>
+                  <input type="number" id="setting-premium-price" value="199">
+                </div>
+                <div class="form-group">
+                  <label>IELTS Price (KGS)</label>
+                  <input type="number" id="setting-ielts-price" value="499">
+                </div>
+                <button class="btn-primary" id="save-settings-btn">Save Settings</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay-global hidden" id="payment-modal">
+  <div class="payment-modal-box">
+    <button class="modal-close" id="payment-close">✕</button>
+    <div class="payment-header">
+      <div class="payment-icon">💳</div>
+      <h2 id="payment-title">Upgrade to Premium</h2>
+      <div class="payment-price-display" id="payment-price-display">199 KGS/month</div>
+    </div>
+    <div class="payment-form">
+      <div class="form-group">
+        <label>Card Number</label>
+        <input type="text" id="card-number" placeholder="4242 4242 4242 4242" maxlength="19" class="mono-input">
+      </div>
+      <div class="payment-row">
+        <div class="form-group">
+          <label>Expiry</label>
+          <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" class="mono-input">
+        </div>
+        <div class="form-group">
+          <label>CVV</label>
+          <input type="text" id="card-cvv" placeholder="123" maxlength="4" class="mono-input">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Name on Card</label>
+        <input type="text" id="card-name" placeholder="Full Name">
+      </div>
+      <div class="payment-summary" id="payment-summary">
+        <div class="summary-row"><span>Plan</span><span id="sum-plan">Premium</span></div>
+        <div class="summary-row"><span>Amount</span><span id="sum-amount">199 KGS</span></div>
+        <div class="summary-row"><span>Currency</span><span>Kyrgyz SOM (KGS)</span></div>
+      </div>
+      <button class="btn-primary full-width" id="pay-now-btn">
+        <span id="pay-btn-text">Pay Now</span>
+      </button>
+      <p class="payment-secure">🔒 Secure payment · 256-bit encryption · Cancel anytime</p>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST NOTIFICATIONS -->
+<div class="toast-container" id="toast-container"></div>
+
+<!-- XP ANIMATION OVERLAY -->
+<div class="xp-popup hidden" id="xp-popup">
+  <div class="xp-popup-inner">
+    <div class="xp-popup-icon">⭐</div>
+    <div class="xp-popup-text" id="xp-popup-text">+50 XP</div>
+  </div>
+</div>
+
+<!-- Firebase Scripts -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { 
+    getAuth, 
+    signInWithPopup, 
+    GoogleAuthProvider, 
+    onAuthStateChanged,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import { 
+    getFirestore, 
+    doc, 
+    getDoc, 
+    setDoc, 
+    updateDoc, 
+    collection, 
+    getDocs, 
+    addDoc, 
+    deleteDoc,
+    query,
+    orderBy,
+    limit,
+    serverTimestamp,
+    onSnapshot,
+    where,
+    increment
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  // ============================================================
+  // FIREBASE CONFIGURATION
+  // Replace with your real Firebase config from Firebase Console
+  // ============================================================
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  // ADMIN EMAIL — Only this email gets admin access
+  const ADMIN_EMAIL = "admin@example.com"; // Change to your email
+
+  // XP thresholds per level
+  const LEVELS = [
+    { name: "Beginner", icon: "🌱", min: 0, max: 500 },
+    { name: "Elementary", icon: "📗", min: 500, max: 1200 },
+    { name: "Intermediate", icon: "📘", min: 1200, max: 2500 },
+    { name: "Upper-Intermediate", icon: "📙", min: 2500, max: 4500 },
+    { name: "Advanced", icon: "🔥", min: 4500, max: 8000 },
+    { name: "Expert", icon: "⭐", min: 8000, max: 99999 }
+  ];
+
+  // ============================================================
+  // INIT
+  // ============================================================
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const provider = new GoogleAuthProvider();
+
+  let currentUser = null;
+  let currentUserData = null;
+  let currentCourse = null;
+  let currentLesson = null;
+  let editingCourseId = null;
+  let editingLessonId = null;
+  let editingLessonCourseId = null;
+  let chatHistory = [];
+  let allCourses = [];
+  let allLessons = [];
+
+  // ============================================================
+  // AUTH
+  // ============================================================
+  document.getElementById('google-signin-btn').addEventListener('click', async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      // Auth state change will handle the rest
+    } catch (e) {
+      showToast('Sign-in failed: ' + e.message, 'error');
+    }
+  });
+
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      currentUser = user;
+      await ensureUserDoc(user);
+      await loadUserData();
+      showApp();
+    } else {
+      currentUser = null;
+      currentUserData = null;
+      showAuth();
+    }
+  });
+
+  async function ensureUserDoc(user) {
+    const ref = doc(db, 'users', user.uid);
+    const snap = await getDoc(ref);
+    if (!snap.exists()) {
+      await setDoc(ref, {
+        uid: user.uid,
+        name: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        xp: 0,
+        level: 'Beginner',
+        streak: 0,
+        lessonsCompleted: 0,
+        role: user.email === ADMIN_EMAIL ? 'admin' : 'user',
+        lastLoginDate: new Date().toDateString(),
+        createdAt: serverTimestamp(),
+        premium: false,
+        ielts: false,
+        bookmarks: [],
+        completedLessons: []
+      });
+    } else {
+      // Update streak
+      const data = snap.data();
+      const today = new Date().toDateString();
+      const yesterday = new Date(Date.now() - 86400000).toDateString();
+      let newStreak = data.streak || 0;
+      if (data.lastLoginDate !== today) {
+        if (data.lastLoginDate === yesterday) {
+          newStreak++;
+        } else if (data.lastLoginDate !== today) {
+          newStreak = 1;
+        }
+        await updateDoc(ref, { 
+          lastLoginDate: today, 
+          streak: newStreak,
+          name: user.displayName,
+          photoURL: user.photoURL
+        });
+      }
+    }
+  }
+
+  async function loadUserData() {
+    const ref = doc(db, 'users', currentUser.uid);
+    const snap = await getDoc(ref);
+    currentUserData = snap.data();
+    renderUserUI();
+  }
+
+  function renderUserUI() {
+    const d = currentUserData;
+    const level = getLevelInfo(d.xp || 0);
+    const pct = Math.round(((d.xp - level.min) / (level.max - level.min)) * 100);
+    const offset = 264 - (264 * pct / 100);
+
+    // Sidebar
+    const avatar = d.photoURL ? `<img src="${d.photoURL}" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">` : d.name?.charAt(0) || 'U';
+    document.getElementById('sidebar-avatar').innerHTML = avatar;
+    document.getElementById('sidebar-name').textContent = d.name || 'User';
+    document.getElementById('sidebar-level').textContent = `${level.icon} ${level.name}`;
+    document.getElementById('sidebar-xp').textContent = `${d.xp || 0} XP`;
+
+    // Topbar
+    document.getElementById('topbar-avatar').innerHTML = avatar;
+    document.getElementById('topbar-name').textContent = (d.name || 'User').split(' ')[0];
+
+    // Dashboard XP banner
+    document.getElementById('user-display-name').textContent = d.name?.split(' ')[0] || 'Learner';
+    document.getElementById('level-badge').textContent = `${level.icon} ${level.name}`;
+    document.getElementById('xp-count').textContent = `${d.xp || 0} XP`;
+    document.getElementById('xp-next').textContent = `/ ${level.max} XP`;
+    document.getElementById('xp-pct').textContent = `${pct}%`;
+    document.getElementById('xp-svg-fill').style.strokeDashoffset = offset;
+    document.getElementById('streak-num').textContent = d.streak || 0;
+    document.getElementById('lessons-done').textContent = d.lessonsCompleted || 0;
+
+    // Profile
+    document.getElementById('profile-avatar').innerHTML = avatar;
+    document.getElementById('profile-name').textContent = d.name || 'User';
+    document.getElementById('profile-email').textContent = d.email;
+    document.getElementById('profile-level-badge').textContent = `${level.icon} ${level.name}`;
+    document.getElementById('prof-xp').textContent = d.xp || 0;
+    document.getElementById('prof-lessons').textContent = d.lessonsCompleted || 0;
+    document.getElementById('prof-streak').textContent = d.streak || 0;
+    document.getElementById('prof-certs').textContent = (d.completedLessons || []).length;
+    const bigPct = Math.min(pct, 100);
+    document.getElementById('big-progress-fill').style.width = bigPct + '%';
+    document.getElementById('big-progress-label').textContent = `${d.xp || 0} / ${level.max} XP to next level`;
+
+    // Greeting
+    const hour = new Date().getHours();
+    const greet = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+    document.getElementById('dashboard-greeting').textContent = `${greet}, ${d.name?.split(' ')[0] || 'Learner'}! 👋`;
+
+    // Admin
+    if (d.role === 'admin' || d.email === ADMIN_EMAIL) {
+      document.getElementById('admin-nav-link').classList.remove('hidden');
+      document.getElementById('section-admin').classList.remove('hidden');
+      document.getElementById('setting-admin-email').value = d.email;
+    }
+  }
+
+  function getLevelInfo(xp) {
+    for (let i = LEVELS.length - 1; i >= 0; i--) {
+      if (xp >= LEVELS[i].min) return LEVELS[i];
+    }
+    return LEVELS[0];
+  }
+
+  // ============================================================
+  // NAVIGATION
+  // ============================================================
+  function showApp() {
+    document.getElementById('auth-screen').classList.remove('active');
+    document.getElementById('app-shell').classList.add('active');
+    loadAllContent();
+  }
+
+  function showAuth() {
+    document.getElementById('auth-screen').classList.add('active');
+    document.getElementById('app-shell').classList.remove('active');
+  }
+
+  // NAV ITEMS
+  document.querySelectorAll('[data-section]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigateTo(el.getAttribute('data-section'));
+    });
+  });
+
+  function navigateTo(section) {
+    // Close sidebar on mobile
+    document.getElementById('sidebar').classList.remove('open');
+    // Update nav active
+    document.querySelectorAll('.nav-item').forEach(n => {
+      n.classList.toggle('active', n.getAttribute('data-section') === section);
+    });
+    // Show section
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById(`section-${section}`);
+    if (target) {
+      target.classList.add('active');
+      if (section === 'leaderboard') loadLeaderboard();
+      if (section === 'admin') loadAdminPanel();
+      if (section === 'profile') loadProfileData();
+      if (section === 'certificates') loadCertificates();
+    }
+  }
+
+  // Mobile menu
+  document.getElementById('menu-btn').addEventListener('click', () => {
+    document.getElementById('sidebar').classList.toggle('open');
+  });
+  document.getElementById('sidebar-close').addEventListener('click', () => {
+    document.getElementById('sidebar').classList.remove('open');
+  });
+
+  // Sign out
+  document.getElementById('signout-btn').addEventListener('click', () => auth.signOut());
+  document.getElementById('signout-profile-btn').addEventListener('click', () => auth.signOut());
+
+  // ============================================================
+  // LOAD ALL CONTENT
+  // ============================================================
+  async function loadAllContent() {
+    await loadCourses();
+    loadDashboard();
+    loadMiniLeaderboard();
+  }
+
+  async function loadCourses() {
+    const snap = await getDocs(collection(db, 'courses'));
+    allCourses = [];
+    snap.forEach(d => allCourses.push({ id: d.id, ...d.data() }));
+    // If no courses exist, seed sample data
+    if (allCourses.length === 0) {
+      await seedSampleData();
+      return loadCourses();
+    }
+    renderCoursesGrid();
+    renderRecommended();
+  }
+
+  async function seedSampleData() {
+    const sampleCourses = [
+      {
+        title: "English Basics",
+        description: "Start from zero — alphabets, greetings, and simple sentences.",
+        level: "beginner",
+        price: 0,
+        premium: false,
+        emoji: "🌱",
+        tags: ["grammar", "basics", "beginner"],
+        order: 1,
+        lessonsCount: 0
+      },
+      {
+        title: "Everyday English",
+        description: "Master common phrases and conversational English for daily use.",
+        level: "beginner",
+        price: 0,
+        premium: false,
+        emoji: "💬",
+        tags: ["conversation", "speaking", "beginner"],
+        order: 2,
+        lessonsCount: 0
+      },
+      {
+        title: "Grammar Mastery",
+        description: "Deep dive into English grammar rules with practical exercises.",
+        level: "intermediate",
+        price: 199,
+        premium: true,
+        emoji: "📘",
+        tags: ["grammar", "intermediate"],
+        order: 3,
+        lessonsCount: 0
+      },
+      {
+        title: "Business English",
+        description: "Professional vocabulary, emails, presentations, and meetings.",
+        level: "advanced",
+        price: 199,
+        premium: true,
+        emoji: "💼",
+        tags: ["business", "advanced", "writing"],
+        order: 4,
+        lessonsCount: 0
+      },
+      {
+        title: "IELTS Preparation",
+        description: "Full IELTS training — Reading, Writing, Listening, Speaking.",
+        level: "ielts",
+        price: 499,
+        premium: true,
+        emoji: "🎓",
+        tags: ["ielts", "advanced", "exam"],
+        order: 5,
+        lessonsCount: 0
+      }
+    ];
+    for (const course of sampleCourses) {
+      const ref = await addDoc(collection(db, 'courses'), { ...course, createdAt: serverTimestamp() });
+      // Add sample lessons to first course
+      if (course.order === 1) {
+        const lessons = [
+          {
+            title: "The English Alphabet",
+            content: "<h3>Welcome to English!</h3><p>The English alphabet has <strong>26 letters</strong>: A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z</p><p><strong>Vowels:</strong> A, E, I, O, U</p><p><strong>Consonants:</strong> All other letters</p><h4>Practice:</h4><p>Try writing the alphabet from memory!</p>",
+            type: "grammar",
+            xp: 30,
+            order: 1,
+            premium: false,
+            videoUrl: "",
+            vocabulary: JSON.stringify([{"word":"Alphabet","def":"A set of letters used in a language"},{"word":"Vowel","def":"A speech sound made with an open mouth: A, E, I, O, U"},{"word":"Consonant","def":"A letter that is not a vowel"}]),
+            quiz: JSON.stringify([{"q":"How many letters are in the English alphabet?","options":["24","25","26","27"],"answer":2},{"q":"Which is NOT a vowel?","options":["A","B","E","O"],"answer":1}])
+          },
+          {
+            title: "Basic Greetings",
+            content: "<h3>Common Greetings</h3><p>Learn how to say hello and introduce yourself in English!</p><ul><li><strong>Hello / Hi</strong> — Used anytime</li><li><strong>Good morning</strong> — Before 12pm</li><li><strong>Good afternoon</strong> — 12pm to 6pm</li><li><strong>Good evening</strong> — After 6pm</li><li><strong>Good night</strong> — When going to sleep</li></ul><h4>Introductions:</h4><ul><li>My name is ___.</li><li>Nice to meet you!</li><li>How are you? / I'm fine, thank you.</li></ul>",
+            type: "speaking",
+            xp: 40,
+            order: 2,
+            premium: false,
+            videoUrl: "",
+            vocabulary: JSON.stringify([{"word":"Greeting","def":"Something you say to welcome someone"},{"word":"Introduction","def":"Telling someone who you are"},{"word":"Formal","def":"Polite and official"},{"word":"Informal","def":"Casual and friendly"}]),
+            quiz: JSON.stringify([{"q":"What do you say before 12pm?","options":["Good night","Good morning","Good evening","Good afternoon"],"answer":1},{"q":"Which greeting can you use anytime?","options":["Good morning","Good night","Hello","Good evening"],"answer":2}])
+          },
+          {
+            title: "Numbers 1-100",
+            content: "<h3>English Numbers</h3><p>Learning numbers is essential in English!</p><p><strong>1-10:</strong> one, two, three, four, five, six, seven, eight, nine, ten</p><p><strong>11-20:</strong> eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty</p><p><strong>Tens:</strong> twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety, one hundred</p><h4>Examples:</h4><ul><li>25 = twenty-five</li><li>47 = forty-seven</li><li>99 = ninety-nine</li></ul>",
+            type: "vocabulary",
+            xp: 35,
+            order: 3,
+            premium: false,
+            videoUrl: "",
+            vocabulary: JSON.stringify([{"word":"Digit","def":"A single number (0-9)"},{"word":"Dozen","def":"12 of something"},{"word":"Score","def":"20 of something (archaic)"},{"word":"Hundred","def":"100"}]),
+            quiz: JSON.stringify([{"q":"How do you write 47 in words?","options":["forty-seven","four-seven","fourty-seven","forty seven"],"answer":0},{"q":"What comes after nineteen?","options":["Ninety","Twenty-one","Twenty","Eleventeen"],"answer":2}])
+          }
+        ];
+        for (const lesson of lessons) {
+          await addDoc(collection(db, 'courses', ref.id, 'lessons'), { ...lesson, createdAt: serverTimestamp() });
+        }
+        await updateDoc(ref, { lessonsCount: lessons.length });
+      }
+    }
+  }
+
+  function renderCoursesGrid() {
+    const grid = document.getElementById('courses-grid');
+    grid.innerHTML = allCourses.map(c => courseCard(c)).join('');
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        const filtered = filter === 'all' ? allCourses
+          : filter === 'free' ? allCourses.filter(c => !c.premium)
+          : filter === 'premium' ? allCourses.filter(c => c.premium)
+          : allCourses.filter(c => c.level === filter);
+        grid.innerHTML = filtered.map(c => courseCard(c)).join('');
+        attachCourseCardListeners();
+      });
+    });
+    attachCourseCardListeners();
+  }
+
+  function attachCourseCardListeners() {
+    document.querySelectorAll('.course-card-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const courseId = e.currentTarget.getAttribute('data-course-id');
+        openCourse(courseId);
+      });
+    });
+  }
+
+  function courseCard(c) {
+    const isPremium = c.premium;
+    const hasAccess = !isPremium || (currentUserData?.premium) || (currentUserData?.email === ADMIN_EMAIL);
+    const levelColors = {
+      beginner: '#10b981',
+      intermediate: '#f59e0b',
+      advanced: '#ef4444',
+      ielts: '#8b5cf6'
+    };
+    const color = levelColors[c.level] || '#06b6d4';
+    return `
+      <div class="course-card" style="--course-color:${color}">
+        <div class="course-card-top">
+          <div class="course-emoji">${c.emoji || '📚'}</div>
+          ${isPremium ? `<div class="course-lock">${hasAccess ? '✓ Premium' : '🔒 Premium'}</div>` : '<div class="course-free-badge">Free</div>'}
+        </div>
+        <div class="course-card-body">
+          <div class="course-level-tag">${c.level?.toUpperCase()}</div>
+          <h3>${c.title}</h3>
+          <p>${c.description}</p>
+          <div class="course-meta">
+            <span>📖 ${c.lessonsCount || 0} lessons</span>
+            <span class="course-price">${c.price === 0 ? 'Free' : c.price + ' KGS'}</span>
+          </div>
+        </div>
+        <button class="course-card-btn btn-primary" data-course-id="${c.id}">
+          ${hasAccess ? 'Start Course →' : `Unlock ${c.price} KGS`}
+        </button>
+      </div>
+    `;
+  }
+
+  function renderRecommended() {
+    const grid = document.getElementById('recommended-grid');
+    const free = allCourses.filter(c => !c.premium).slice(0, 3);
+    grid.innerHTML = free.map(c => courseCard(c)).join('');
+    attachCourseCardListeners();
+  }
+
+  // ============================================================
+  // OPEN COURSE / LESSON
+  // ============================================================
+  async function openCourse(courseId) {
+    const course = allCourses.find(c => c.id === courseId);
+    if (!course) return;
+    
+    // Check access
+    if (course.premium && !currentUserData?.premium && currentUserData?.email !== ADMIN_EMAIL) {
+      openPaymentModal(course.price >= 400 ? 'ielts' : 'premium', course.price, course.title);
+      return;
+    }
+    
+    currentCourse = course;
+    // Load lessons
+    const snap = await getDocs(query(collection(db, 'courses', courseId, 'lessons'), orderBy('order')));
+    allLessons = [];
+    snap.forEach(d => allLessons.push({ id: d.id, ...d.data() }));
+    
+    if (allLessons.length === 0) {
+      showToast('This course has no lessons yet.', 'info');
+      return;
+    }
+    
+    openLesson(allLessons[0], course);
+  }
+
+  function openLesson(lesson, course) {
+    currentLesson = lesson;
+    navigateTo('lesson');
+    document.getElementById('section-lesson').classList.add('active');
+    
+    // Render lesson info
+    document.getElementById('lesson-breadcrumb').textContent = `${course.title} / ${lesson.title}`;
+    document.getElementById('lesson-title').textContent = lesson.title;
+    document.getElementById('lesson-meta').innerHTML = `
+      <span class="lesson-type-tag">${lesson.type}</span>
+      <span>⭐ +${lesson.xp || 30} XP</span>
+      ${lesson.premium ? '<span class="premium-tag">Premium</span>' : ''}
+    `;
+
+    // Video
+    if (lesson.videoUrl) {
+      document.getElementById('video-placeholder').classList.add('hidden');
+      const iframe = document.getElementById('lesson-video-iframe');
+      iframe.src = lesson.videoUrl;
+      iframe.classList.remove('hidden');
+    } else {
+      document.getElementById('video-placeholder').classList.remove('hidden');
+      document.getElementById('lesson-video-iframe').classList.add('hidden');
+    }
+
+    // Content
+    document.getElementById('lesson-content-body').innerHTML = lesson.content || '<p>Content coming soon.</p>';
+
+    // Vocabulary
+    let vocab = [];
+    try { vocab = JSON.parse(lesson.vocabulary || '[]'); } catch(e) {}
+    const vg = document.getElementById('vocab-grid');
+    vg.innerHTML = vocab.length ? vocab.map(v => `
+      <div class="vocab-card">
+        <div class="vocab-word">${v.word}</div>
+        <div class="vocab-def">${v.def}</div>
+      </div>
+    `).join('') : '<p class="empty-state">No vocabulary for this lesson.</p>';
+
+    // Quiz
+    renderQuiz(lesson);
+
+    // Lesson list
+    const ll = document.getElementById('lesson-list-sidebar');
+    const completed = currentUserData?.completedLessons || [];
+    ll.innerHTML = allLessons.map((l, i) => `
+      <div class="lesson-list-item ${l.id === lesson.id ? 'active' : ''} ${completed.includes(l.id) ? 'done' : ''}" 
+           data-lesson-idx="${i}" style="cursor:pointer">
+        <span class="lli-num">${i + 1}</span>
+        <span class="lli-title">${l.title}</span>
+        <span class="lli-check">${completed.includes(l.id) ? '✓' : ''}</span>
+      </div>
+    `).join('');
+    document.querySelectorAll('.lesson-list-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const idx = parseInt(item.getAttribute('data-lesson-idx'));
+        openLesson(allLessons[idx], currentCourse);
+      });
+    });
+
+    // Notes
+    loadNotes(lesson.id);
+
+    // Reset tabs
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+    document.querySelector('.tab-btn[data-tab="content"]').classList.add('active');
+    document.getElementById('tab-content').classList.remove('hidden');
+
+    // Bookmark btn
+    const bookmarks = currentUserData?.bookmarks || [];
+    document.getElementById('bookmark-btn').textContent = bookmarks.includes(lesson.id) ? '🔖 Bookmarked' : '🔖 Bookmark';
+  }
+
+  function renderQuiz(lesson) {
+    let quiz = [];
+    try { quiz = JSON.parse(lesson.quiz || '[]'); } catch(e) {}
+    const qc = document.getElementById('quiz-container');
+    if (!quiz.length) {
+      qc.innerHTML = '<p class="empty-state">No quiz for this lesson.</p>';
+      return;
+    }
+    qc.innerHTML = quiz.map((q, qi) => `
+      <div class="quiz-question" id="qq-${qi}">
+        <p class="q-text"><strong>Q${qi+1}.</strong> ${q.q}</p>
+        <div class="q-options">
+          ${q.options.map((opt, oi) => `
+            <button class="q-option" data-qi="${qi}" data-oi="${oi}" data-ans="${q.answer}">${opt}</button>
+          `).join('')}
+        </div>
+        <div class="q-feedback hidden" id="qf-${qi}"></div>
+      </div>
+    `).join('') + `<div class="quiz-result hidden" id="quiz-result"></div>`;
+    
+    let answered = 0;
+    let correct = 0;
+    document.querySelectorAll('.q-option').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const qi = parseInt(e.target.getAttribute('data-qi'));
+        const oi = parseInt(e.target.getAttribute('data-oi'));
+        const ans = parseInt(e.target.getAttribute('data-ans'));
+        const block = document.getElementById(`qq-${qi}`);
+        if (block.classList.contains('answered')) return;
+        block.classList.add('answered');
+        answered++;
+        const fb = document.getElementById(`qf-${qi}`);
+        fb.classList.remove('hidden');
+        if (oi === ans) {
+          e.target.classList.add('correct');
+          fb.textContent = '✓ Correct!';
+          fb.className = 'q-feedback correct-fb';
+          correct++;
+        } else {
+          e.target.classList.add('wrong');
+          block.querySelectorAll('.q-option')[ans].classList.add('correct');
+          fb.textContent = '✗ Incorrect. The correct answer is highlighted.';
+          fb.className = 'q-feedback wrong-fb';
+        }
+        if (answered === quiz.length) {
+          const result = document.getElementById('quiz-result');
+          result.classList.remove('hidden');
+          result.innerHTML = `
+            <div class="quiz-score">
+              <div class="score-num">${correct}/${quiz.length}</div>
+              <div class="score-label">${correct === quiz.length ? '🎉 Perfect!' : correct >= quiz.length/2 ? '👍 Good job!' : '📚 Keep studying!'}</div>
+            </div>
+          `;
+        }
+      });
+    });
+  }
+
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.getAttribute('data-tab');
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+      document.getElementById(`tab-${tab}`).classList.remove('hidden');
+    });
+  });
+
+  // Complete lesson
+  document.getElementById('complete-lesson-btn').addEventListener('click', async () => {
+    if (!currentLesson || !currentUser) return;
+    const completed = currentUserData?.completedLessons || [];
+    if (completed.includes(currentLesson.id)) {
+      showToast('Already completed!', 'info');
+      return;
+    }
+    const xpGain = currentLesson.xp || 30;
+    const ref = doc(db, 'users', currentUser.uid);
+    const newCompleted = [...completed, currentLesson.id];
+    await updateDoc(ref, {
+      xp: increment(xpGain),
+      lessonsCompleted: increment(1),
+      completedLessons: newCompleted
+    });
+    showXPPopup(`+${xpGain} XP`);
+    showToast(`✓ Lesson complete! +${xpGain} XP`, 'success');
+    await loadUserData();
+    // Update lesson list
+    openLesson(currentLesson, currentCourse);
+  });
+
+  // Prev/next lesson
+  document.getElementById('prev-lesson-btn').addEventListener('click', () => {
+    if (!allLessons || !currentLesson) return;
+    const idx = allLessons.findIndex(l => l.id === currentLesson.id);
+    if (idx > 0) openLesson(allLessons[idx - 1], currentCourse);
+  });
+  document.getElementById('next-lesson-btn').addEventListener('click', () => {
+    if (!allLessons || !currentLesson) return;
+    const idx = allLessons.findIndex(l => l.id === currentLesson.id);
+    if (idx < allLessons.length - 1) openLesson(allLessons[idx + 1], currentCourse);
+  });
+
+  document.getElementById('lesson-back').addEventListener('click', () => navigateTo('courses'));
+
+  // Bookmark
+  document.getElementById('bookmark-btn').addEventListener('click', async () => {
+    if (!currentLesson || !currentUser) return;
+    const ref = doc(db, 'users', currentUser.uid);
+    const bookmarks = currentUserData?.bookmarks || [];
+    let newBookmarks;
+    if (bookmarks.includes(currentLesson.id)) {
+      newBookmarks = bookmarks.filter(b => b !== currentLesson.id);
+      document.getElementById('bookmark-btn').textContent = '🔖 Bookmark';
+      showToast('Bookmark removed', 'info');
+    } else {
+      newBookmarks = [...bookmarks, currentLesson.id];
+      document.getElementById('bookmark-btn').textContent = '🔖 Bookmarked';
+      showToast('Lesson bookmarked!', 'success');
+    }
+    await updateDoc(ref, { bookmarks: newBookmarks });
+    currentUserData.bookmarks = newBookmarks;
+  });
+
+  // Notes
+  async function loadNotes(lessonId) {
+    const ref = doc(db, 'users', currentUser.uid, 'notes', lessonId);
+    const snap = await getDoc(ref);
+    document.getElementById('lesson-notes').value = snap.exists() ? snap.data().content : '';
+  }
+
+  document.getElementById('save-notes-btn').addEventListener('click', async () => {
+    if (!currentLesson) return;
+    const content = document.getElementById('lesson-notes').value;
+    await setDoc(doc(db, 'users', currentUser.uid, 'notes', currentLesson.id), {
+      content,
+      lessonTitle: currentLesson.title,
+      updatedAt: serverTimestamp()
+    });
+    showToast('Notes saved!', 'success');
+  });
+
+  // ============================================================
+  // DASHBOARD
+  // ============================================================
+  function loadDashboard() {
+    // Continue learning
+    const completed = currentUserData?.completedLessons || [];
+    if (allLessons.length > 0) {
+      const nextLesson = allLessons.find(l => !completed.includes(l.id)) || allLessons[0];
+      document.getElementById('continue-title').textContent = nextLesson.title;
+      document.getElementById('continue-desc').textContent = currentCourse?.title || allCourses[0]?.title || '';
+      const pct = allLessons.length ? Math.round(completed.length / allLessons.length * 100) : 0;
+      document.getElementById('continue-bar').style.width = pct + '%';
+    }
+    document.getElementById('continue-btn').addEventListener('click', () => {
+      if (allCourses[0]) openCourse(allCourses[0].id);
+    });
+  }
+
+  // ============================================================
+  // LEADERBOARD
+  // ============================================================
+  async function loadLeaderboard() {
+    const q = query(collection(db, 'users'), orderBy('xp', 'desc'), limit(20));
+    const snap = await getDocs(q);
+    const users = [];
+    snap.forEach(d => users.push({ id: d.id, ...d.data() }));
+    renderLeaderboard(users);
+  }
+
+  function renderLeaderboard(users) {
+    const podium = document.getElementById('leaderboard-podium');
+    const list = document.getElementById('leaderboard-list');
+    const top3 = users.slice(0, 3);
+    const rest = users.slice(3);
+
+    podium.innerHTML = `
+      <div class="podium-wrap">
+        ${top3[1] ? `<div class="podium-item silver">
+          <div class="podium-avatar">${top3[1].name?.charAt(0) || '?'}</div>
+          <div class="podium-name">${top3[1].name?.split(' ')[0] || 'User'}</div>
+          <div class="podium-xp">${top3[1].xp || 0} XP</div>
+          <div class="podium-rank rank2">2</div>
+        </div>` : ''}
+        ${top3[0] ? `<div class="podium-item gold">
+          <div class="podium-crown">👑</div>
+          <div class="podium-avatar">${top3[0].name?.charAt(0) || '?'}</div>
+          <div class="podium-name">${top3[0].name?.split(' ')[0] || 'User'}</div>
+          <div class="podium-xp">${top3[0].xp || 0} XP</div>
+          <div class="podium-rank rank1">1</div>
+        </div>` : ''}
+        ${top3[2] ? `<div class="podium-item bronze">
+          <div class="podium-avatar">${top3[2].name?.charAt(0) || '?'}</div>
+          <div class="podium-name">${top3[2].name?.split(' ')[0] || 'User'}</div>
+          <div class="podium-xp">${top3[2].xp || 0} XP</div>
+          <div class="podium-rank rank3">3</div>
+        </div>` : ''}
+      </div>
+    `;
+
+    list.innerHTML = rest.map((u, i) => `
+      <div class="lb-row ${u.uid === currentUser?.uid ? 'my-row' : ''}">
+        <span class="lb-pos">${i + 4}</span>
+        <div class="lb-avatar">${u.name?.charAt(0) || '?'}</div>
+        <div class="lb-info">
+          <span class="lb-name">${u.name || 'User'} ${u.uid === currentUser?.uid ? '(You)' : ''}</span>
+          <span class="lb-level">${getLevelInfo(u.xp || 0).icon} ${getLevelInfo(u.xp || 0).name}</span>
+        </div>
+        <div class="lb-xp">${u.xp || 0} <small>XP</small></div>
+      </div>
+    `).join('');
+
+    // My rank
+    const myIdx = users.findIndex(u => u.uid === currentUser?.uid);
+    if (myIdx >= 0) {
+      document.getElementById('my-rank-card').innerHTML = `
+        <div class="my-rank-inner">
+          <span>Your rank:</span>
+          <strong>#${myIdx + 1}</strong>
+          <span>out of ${users.length} learners</span>
+          <span class="my-rank-xp">${currentUserData?.xp || 0} XP</span>
+        </div>
+      `;
+    }
+  }
+
+  async function loadMiniLeaderboard() {
+    const q = query(collection(db, 'users'), orderBy('xp', 'desc'), limit(5));
+    const snap = await getDocs(q);
+    const users = [];
+    snap.forEach(d => users.push({ id: d.id, ...d.data() }));
+    const el = document.getElementById('mini-leaderboard');
+    el.innerHTML = users.map((u, i) => `
+      <div class="mini-lb-row">
+        <span class="mini-pos">${i + 1}</span>
+        <div class="mini-avatar">${u.name?.charAt(0) || '?'}</div>
+        <span class="mini-name">${u.name?.split(' ')[0] || 'User'}</span>
+        <span class="mini-xp">${u.xp || 0} XP</span>
+      </div>
+    `).join('');
+  }
+
+  document.querySelectorAll('.lb-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lb-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      loadLeaderboard(); // Could filter by period
+    });
+  });
+
+  // ============================================================
+  // CERTIFICATES
+  // ============================================================
+  async function loadCertificates() {
+    const cg = document.getElementById('certificates-grid');
+    const completed = currentUserData?.completedLessons || [];
+    // Check which courses are fully completed
+    const completedCourses = [];
+    for (const course of allCourses) {
+      const snap = await getDocs(collection(db, 'courses', course.id, 'lessons'));
+      const lessons = [];
+      snap.forEach(d => lessons.push(d.id));
+      if (lessons.length > 0 && lessons.every(lid => completed.includes(lid))) {
+        completedCourses.push(course);
+      }
+    }
+    if (completedCourses.length === 0) {
+      cg.innerHTML = `
+        <div class="no-certs">
+          <div class="no-certs-icon">🎓</div>
+          <h3>No certificates yet</h3>
+          <p>Complete all lessons in a course to earn your certificate!</p>
+          <button class="btn-primary" data-section="courses">Browse Courses</button>
+        </div>
+      `;
+      document.querySelector('#section-certificates .btn-primary')?.addEventListener('click', () => navigateTo('courses'));
+    } else {
+      cg.innerHTML = completedCourses.map(c => `
+        <div class="cert-card">
+          <div class="cert-ribbon">CERTIFICATE OF COMPLETION</div>
+          <div class="cert-emoji">${c.emoji || '📚'}</div>
+          <h3>${c.title}</h3>
+          <p>Awarded to <strong>${currentUserData?.name}</strong></p>
+          <p class="cert-date">Completed ${new Date().toLocaleDateString()}</p>
+          <button class="btn-primary" onclick="downloadCert('${c.id}', '${c.title}')">📥 Download PDF</button>
+        </div>
+      `).join('');
+    }
+  }
+
+  window.downloadCert = function(courseId, courseTitle) {
+    // Generate a text-based certificate (in production, use html2canvas or jsPDF)
+    const name = currentUserData?.name || 'Learner';
+    const certContent = `
+CERTIFICATE OF COMPLETION
+
+This certifies that
+
+${name}
+
+has successfully completed the course:
+
+"${courseTitle}"
+
+Sharapat English Platform
+Date: ${new Date().toLocaleDateString()}
+    `;
+    const blob = new Blob([certContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Certificate_${courseTitle.replace(/\s/g, '_')}.txt`;
+    a.click();
+    showToast('Certificate downloaded!', 'success');
+  };
+
+  // ============================================================
+  // PROFILE
+  // ============================================================
+  async function loadProfileData() {
+    const completed = currentUserData?.completedLessons || [];
+    const hl = document.getElementById('history-list');
+    if (completed.length === 0) {
+      hl.innerHTML = '<p class="empty-state">No lessons completed yet.</p>';
+    } else {
+      hl.innerHTML = completed.slice(-10).reverse().map(lid => `
+        <div class="history-item">
+          <span>📖 Lesson completed</span>
+          <span class="history-id">${lid.substring(0, 8)}...</span>
+        </div>
+      `).join('');
+    }
+    // Bookmarks
+    const bookmarks = currentUserData?.bookmarks || [];
+    const bl = document.getElementById('bookmarks-list');
+    bl.innerHTML = bookmarks.length 
+      ? bookmarks.map(bid => `<div class="bookmark-item">🔖 ${bid.substring(0, 12)}...</div>`).join('')
+      : '<p class="empty-state">No bookmarks yet.</p>';
+  }
+
+  // Avatar upload (stored as base64 locally for demo; in production use Firebase Storage)
+  document.getElementById('avatar-upload-input').addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = async (ev) => {
+      const dataUrl = ev.target.result;
+      // Update Firestore (in production store in Firebase Storage)
+      await updateDoc(doc(db, 'users', currentUser.uid), { photoURL: dataUrl });
+      currentUserData.photoURL = dataUrl;
+      renderUserUI();
+      showToast('Avatar updated!', 'success');
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // ============================================================
+  // AI TEACHER CHAT
+  // ============================================================
+  document.getElementById('chat-send-btn').addEventListener('click', sendChat);
+  document.getElementById('chat-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChat(); }
+  });
+  document.querySelectorAll('.quick-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('chat-input').value = btn.getAttribute('data-q');
+      sendChat();
+    });
+  });
+  document.getElementById('clear-chat-btn').addEventListener('click', () => {
+    chatHistory = [];
+    const body = document.getElementById('chat-body');
+    body.innerHTML = `
+      <div class="chat-welcome">
+        <div class="chat-bot-icon">🎓</div>
+        <h3>Hello! I'm your AI English Teacher</h3>
+        <p>Ask me anything about English — grammar, vocabulary, IELTS prep, writing feedback, or conversation practice!</p>
+        <div class="quick-questions">
+          <button class="quick-q" data-q="Check my grammar: I go to school yesterday">Check grammar</button>
+          <button class="quick-q" data-q="Give me 10 advanced English vocabulary words with examples">New vocabulary</button>
+          <button class="quick-q" data-q="How do I write a good IELTS Task 2 essay?">IELTS tips</button>
+          <button class="quick-q" data-q="What's the difference between 'affect' and 'effect'?">Word confusion</button>
+        </div>
+      </div>
+    `;
+    document.querySelectorAll('.quick-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('chat-input').value = btn.getAttribute('data-q');
+        sendChat();
+      });
+    });
+  });
+
+  async function sendChat() {
+    const input = document.getElementById('chat-input');
+    const msg = input.value.trim();
+    if (!msg) return;
+    input.value = '';
+
+    // Remove welcome screen
+    const welcome = document.querySelector('.chat-welcome');
+    if (welcome) welcome.remove();
+
+    const body = document.getElementById('chat-body');
+    
+    // User bubble
+    body.innerHTML += `<div class="chat-bubble user">${escapeHtml(msg)}</div>`;
+    body.scrollTop = body.scrollHeight;
+
+    // Loading bubble
+    const loadId = 'load-' + Date.now();
+    body.innerHTML += `<div class="chat-bubble bot loading" id="${loadId}"><span class="dot-anim">●●●</span></div>`;
+    body.scrollTop = body.scrollHeight;
+
+    chatHistory.push({ role: 'user', content: msg });
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: `You are an expert English teacher for the Sharapat English learning platform. You help learners with:
+- Grammar correction and explanation
+- Vocabulary building with examples and context
+- IELTS preparation (all 4 skills)
+- Writing feedback and improvement
+- Speaking tips and pronunciation
+- Listening comprehension strategies
+- Reading comprehension
+
+Always be encouraging, clear, and educational. Format responses nicely with examples. If correcting grammar, show the corrected version clearly. Use emojis sparingly for clarity. Keep responses focused and practical for English learners.`,
+          messages: chatHistory
+        })
+      });
+      const data = await response.json();
+      const reply = data.content?.[0]?.text || 'Sorry, I could not generate a response. Please try again.';
+      
+      document.getElementById(loadId)?.remove();
+      chatHistory.push({ role: 'assistant', content: reply });
+      
+      body.innerHTML += `<div class="chat-bubble bot">${formatChatReply(reply)}</div>`;
+      body.scrollTop = body.scrollHeight;
+    } catch (err) {
+      document.getElementById(loadId)?.remove();
+      body.innerHTML += `<div class="chat-bubble bot error">⚠️ AI teacher is temporarily unavailable. Please try again in a moment.</div>`;
+      body.scrollTop = body.scrollHeight;
+    }
+  }
+
+  function formatChatReply(text) {
+    return escapeHtml(text)
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/`(.*?)`/g, '<code>$1</code>')
+      .replace(/\n/g, '<br>');
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.appendChild(document.createTextNode(text));
+    return div.innerHTML;
+  }
+
+  // ============================================================
+  // PAYMENT MODAL
+  // ============================================================
+  document.getElementById('buy-premium-btn').addEventListener('click', () => openPaymentModal('premium', 199, 'Premium'));
+  document.getElementById('buy-ielts-btn').addEventListener('click', () => openPaymentModal('ielts', 499, 'IELTS Pro'));
+
+  function openPaymentModal(plan, price, name) {
+    const modal = document.getElementById('payment-modal');
+    document.getElementById('payment-title').textContent = `Upgrade to ${name}`;
+    document.getElementById('payment-price-display').textContent = `${price} KGS${plan === 'premium' ? '/month' : ' one-time'}`;
+    document.getElementById('sum-plan').textContent = name;
+    document.getElementById('sum-amount').textContent = `${price} KGS`;
+    modal.classList.remove('hidden');
+    modal.setAttribute('data-plan', plan);
+  }
+
+  document.getElementById('payment-close').addEventListener('click', () => {
+    document.getElementById('payment-modal').classList.add('hidden');
+  });
+
+  // Format card number
+  document.getElementById('card-number').addEventListener('input', (e) => {
+    let v = e.target.value.replace(/\D/g, '').substring(0, 16);
+    e.target.value = v.replace(/(.{4})/g, '$1 ').trim();
+  });
+  document.getElementById('card-expiry').addEventListener('input', (e) => {
+    let v = e.target.value.replace(/\D/g, '').substring(0, 4);
+    if (v.length >= 3) v = v.substring(0, 2) + '/' + v.substring(2);
+    e.target.value = v;
+  });
+
+  document.getElementById('pay-now-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('pay-now-btn');
+    const cardNum = document.getElementById('card-number').value.replace(/\s/g, '');
+    const expiry = document.getElementById('card-expiry').value;
+    const cvv = document.getElementById('card-cvv').value;
+    const name = document.getElementById('card-name').value;
+
+    if (cardNum.length < 16 || !expiry || cvv.length < 3 || !name) {
+      showToast('Please fill in all card details', 'error');
+      return;
+    }
+
+    btn.innerHTML = '<span class="spinner"></span> Processing...';
+    btn.disabled = true;
+
+    // Simulate payment processing
+    await new Promise(r => setTimeout(r, 2000));
+
+    const plan = document.getElementById('payment-modal').getAttribute('data-plan');
+    const update = plan === 'ielts' ? { ielts: true, premium: true } : { premium: true };
+    
+    await updateDoc(doc(db, 'users', currentUser.uid), update);
+    await addDoc(collection(db, 'payments'), {
+      uid: currentUser.uid,
+      plan,
+      amount: plan === 'ielts' ? 499 : 199,
+      currency: 'KGS',
+      status: 'completed',
+      createdAt: serverTimestamp()
+    });
+
+    currentUserData = { ...currentUserData, ...update };
+    
+    btn.innerHTML = '✓ Payment Successful!';
+    showToast('🎉 Welcome to Premium! All content unlocked.', 'success');
+    
+    setTimeout(() => {
+      document.getElementById('payment-modal').classList.add('hidden');
+      btn.innerHTML = 'Pay Now';
+      btn.disabled = false;
+      renderCoursesGrid();
+      renderRecommended();
+    }, 1500);
+  });
+
+  // ============================================================
+  // SEARCH
+  // ============================================================
+  document.getElementById('search-input').addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase().trim();
+    const dd = document.getElementById('search-dropdown');
+    if (!q) { dd.classList.add('hidden'); return; }
+    const results = allCourses.filter(c => 
+      c.title.toLowerCase().includes(q) || 
+      c.description.toLowerCase().includes(q) ||
+      (c.tags || []).some(t => t.includes(q))
+    );
+    if (!results.length) { dd.classList.add('hidden'); return; }
+    dd.innerHTML = results.map(c => `
+      <div class="search-result" data-course-id="${c.id}">
+        <span>${c.emoji || '📚'}</span>
+        <div>
+          <strong>${c.title}</strong>
+          <small>${c.level}</small>
+        </div>
+      </div>
+    `).join('');
+    dd.classList.remove('hidden');
+    dd.querySelectorAll('.search-result').forEach(r => {
+      r.addEventListener('click', () => {
+        openCourse(r.getAttribute('data-course-id'));
+        dd.classList.add('hidden');
+        e.target.value = '';
+        navigateTo('courses');
+      });
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.topbar-search')) {
+      document.getElementById('search-dropdown').classList.add('hidden');
+    }
+  });
+
+  // ============================================================
+  // NOTIFICATIONS
+  // ============================================================
+  document.getElementById('notif-btn').addEventListener('click', () => {
+    document.getElementById('notif-panel').classList.toggle('hidden');
+  });
+  document.getElementById('clear-notifs').addEventListener('click', () => {
+    document.getElementById('notif-list').innerHTML = '<div class="notif-empty">No notifications yet</div>';
+    document.getElementById('notif-dot').classList.add('hidden');
+    document.getElementById('notif-panel').classList.add('hidden');
+  });
+
+  // Listen for notifications
+  function listenNotifications() {
+    const q = query(collection(db, 'notifications'), orderBy('createdAt', 'desc'), limit(10));
+    onSnapshot(q, (snap) => {
+      const notifs = [];
+      snap.forEach(d => notifs.push({ id: d.id, ...d.data() }));
+      if (notifs.length > 0) {
+        document.getElementById('notif-dot').classList.remove('hidden');
+        const nl = document.getElementById('notif-list');
+        nl.innerHTML = notifs.map(n => `
+          <div class="notif-item notif-${n.type || 'info'}">
+            <strong>${n.title}</strong>
+            <p>${n.message}</p>
+            <small>${n.createdAt?.toDate?.()?.toLocaleDateString?.() || ''}</small>
+          </div>
+        `).join('');
+      }
+    });
+  }
+
+  // ============================================================
+  // ADMIN PANEL
+  // ============================================================
+  async function loadAdminPanel() {
+    if (currentUserData?.email !== ADMIN_EMAIL && currentUserData?.role !== 'admin') return;
+    loadAdminStats();
+    loadAdminCourses();
+    loadAdminUsers();
+    loadSentNotifications();
+  }
+
+  async function loadAdminStats() {
+    const usersSnap = await getDocs(collection(db, 'users'));
+    const coursesSnap = await getDocs(collection(db, 'courses'));
+    const paymentsSnap = await getDocs(collection(db, 'payments'));
+    let totalRevenue = 0;
+    paymentsSnap.forEach(d => totalRevenue += (d.data().amount || 0));
+    let totalLessons = 0;
+    for (const cd of coursesSnap.docs) {
+      const ls = await getDocs(collection(db, 'courses', cd.id, 'lessons'));
+      totalLessons += ls.size;
+    }
+    document.getElementById('stat-users').textContent = usersSnap.size;
+    document.getElementById('stat-courses').textContent = coursesSnap.size;
+    document.getElementById('stat-lessons').textContent = totalLessons;
+    document.getElementById('stat-revenue').textContent = totalRevenue.toLocaleString() + ' KGS';
+  }
+
+  async function loadAdminCourses() {
+    const list = document.getElementById('admin-courses-list');
+    list.innerHTML = '';
+    for (const course of allCourses) {
+      const lessonsSnap = await getDocs(collection(db, 'courses', course.id, 'lessons'));
+      const lessons = [];
+      lessonsSnap.forEach(d => lessons.push({ id: d.id, ...d.data() }));
+      const courseEl = document.createElement('div');
+      courseEl.className = 'admin-course-item';
+      courseEl.innerHTML = `
+        <div class="admin-course-header">
+          <div class="admin-course-title">${course.emoji || '📚'} ${course.title}</div>
+          <div class="admin-course-meta">
+            <span>${course.level}</span>
+            <span>${course.price === 0 ? 'Free' : course.price + ' KGS'}</span>
+            <span>${course.premium ? '🔒 Premium' : '🆓 Free'}</span>
+          </div>
+          <div class="admin-course-actions">
+            <button class="btn-secondary small edit-course-btn" data-id="${course.id}">Edit</button>
+            <button class="btn-secondary small add-lesson-btn" data-id="${course.id}">+ Lesson</button>
+            <button class="btn-danger small del-course-btn" data-id="${course.id}">Delete</button>
+          </div>
+        </div>
+        <div class="admin-lessons-list">
+          ${lessons.map(l => `
+            <div class="admin-lesson-item">
+              <span>${l.type === 'grammar' ? '📝' : l.type === 'vocabulary' ? '📖' : '🎯'} ${l.title}</span>
+              <span>+${l.xp || 30} XP</span>
+              ${l.premium ? '<span class="premium-tag">Premium</span>' : ''}
+              <div class="admin-lesson-actions">
+                <button class="btn-secondary small edit-lesson-btn" data-course="${course.id}" data-id="${l.id}">Edit</button>
+                <button class="btn-danger small del-lesson-btn" data-course="${course.id}" data-id="${l.id}">Delete</button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      list.appendChild(courseEl);
+    }
+    // Attach listeners
+    document.querySelectorAll('.edit-course-btn').forEach(b => {
+      b.addEventListener('click', () => openCourseForm(b.getAttribute('data-id')));
+    });
+    document.querySelectorAll('.del-course-btn').forEach(b => {
+      b.addEventListener('click', () => deleteCourse(b.getAttribute('data-id')));
+    });
+    document.querySelectorAll('.add-lesson-btn').forEach(b => {
+      b.addEventListener('click', () => openLessonForm(b.getAttribute('data-id'), null));
+    });
+    document.querySelectorAll('.edit-lesson-btn').forEach(b => {
+      b.addEventListener('click', () => openLessonForm(b.getAttribute('data-course'), b.getAttribute('data-id')));
+    });
+    document.querySelectorAll('.del-lesson-btn').forEach(b => {
+      b.addEventListener('click', () => deleteLesson(b.getAttribute('data-course'), b.getAttribute('data-id')));
+    });
+  }
+
+  async function loadAdminUsers() {
+    const snap = await getDocs(query(collection(db, 'users'), orderBy('xp', 'desc')));
+    const list = document.getElementById('admin-users-list');
+    list.innerHTML = '';
+    snap.forEach(d => {
+      const u = d.data();
+      const el = document.createElement('div');
+      el.className = 'admin-user-row';
+      el.innerHTML = `
+        <div class="admin-user-info">
+          <div class="admin-user-avatar">${u.name?.charAt(0) || '?'}</div>
+          <div>
+            <strong>${u.name || 'Unknown'}</strong>
+            <small>${u.email}</small>
+          </div>
+        </div>
+        <div class="admin-user-meta">
+          <span>${u.xp || 0} XP</span>
+          <span>${u.role || 'user'}</span>
+          <span>${u.premium ? '⭐ Premium' : 'Free'}</span>
+        </div>
+        <div class="admin-user-actions">
+          <button class="btn-secondary small" onclick="adminSetXP('${d.id}', '${u.name}')">Set XP</button>
+          <button class="btn-secondary small" onclick="adminResetProgress('${d.id}', '${u.name}')">Reset</button>
+          ${u.email !== ADMIN_EMAIL ? `<button class="btn-danger small" onclick="adminTogglePremium('${d.id}', ${u.premium})">
+            ${u.premium ? 'Remove Premium' : 'Grant Premium'}
+          </button>` : ''}
+        </div>
+      `;
+      list.appendChild(el);
+    });
+  }
+
+  window.adminSetXP = async (uid, name) => {
+    const xp = prompt(`Set XP for ${name}:`);
+    if (xp === null) return;
+    const val = parseInt(xp);
+    if (isNaN(val) || val < 0) return showToast('Invalid XP value', 'error');
+    await updateDoc(doc(db, 'users', uid), { xp: val });
+    showToast(`XP updated for ${name}`, 'success');
+    loadAdminUsers();
+  };
+
+  window.adminResetProgress = async (uid, name) => {
+    if (!confirm(`Reset all progress for ${name}?`)) return;
+    await updateDoc(doc(db, 'users', uid), { 
+      xp: 0, lessonsCompleted: 0, completedLessons: [], streak: 0 
+    });
+    showToast(`Progress reset for ${name}`, 'success');
+    loadAdminUsers();
+  };
+
+  window.adminTogglePremium = async (uid, current) => {
+    await updateDoc(doc(db, 'users', uid), { premium: !current });
+    showToast(`Premium ${!current ? 'granted' : 'removed'}`, 'success');
+    loadAdminUsers();
+  };
+
+  // Course form
+  function openCourseForm(courseId = null) {
+    editingCourseId = courseId;
+    const modal = document.getElementById('course-form-modal');
+    const course = courseId ? allCourses.find(c => c.id === courseId) : null;
+    document.getElementById('course-form-title').textContent = courseId ? 'Edit Course' : 'Add New Course';
+    document.getElementById('cf-title').value = course?.title || '';
+    document.getElementById('cf-desc').value = course?.description || '';
+    document.getElementById('cf-level').value = course?.level || 'beginner';
+    document.getElementById('cf-price').value = course?.price ?? 0;
+    document.getElementById('cf-tags').value = (course?.tags || []).join(', ');
+    document.getElementById('cf-emoji').value = course?.emoji || '📚';
+    document.getElementById('cf-premium').checked = course?.premium || false;
+    modal.classList.remove('hidden');
+  }
+
+  document.getElementById('add-course-btn').addEventListener('click', () => openCourseForm());
+  document.getElementById('course-form-cancel').addEventListener('click', () => {
+    document.getElementById('course-form-modal').classList.add('hidden');
+  });
+  document.getElementById('course-form-save').addEventListener('click', async () => {
+    const data = {
+      title: document.getElementById('cf-title').value.trim(),
+      description: document.getElementById('cf-desc').value.trim(),
+      level: document.getElementById('cf-level').value,
+      price: parseInt(document.getElementById('cf-price').value) || 0,
+      tags: document.getElementById('cf-tags').value.split(',').map(t => t.trim()).filter(Boolean),
+      emoji: document.getElementById('cf-emoji').value.trim() || '📚',
+      premium: document.getElementById('cf-premium').checked,
+      updatedAt: serverTimestamp()
+    };
+    if (!data.title) return showToast('Title is required', 'error');
+    if (editingCourseId) {
+      await updateDoc(doc(db, 'courses', editingCourseId), data);
+      showToast('Course updated!', 'success');
+    } else {
+      await addDoc(collection(db, 'courses'), { ...data, lessonsCount: 0, order: allCourses.length + 1, createdAt: serverTimestamp() });
+      showToast('Course added!', 'success');
+    }
+    document.getElementById('course-form-modal').classList.add('hidden');
+    await loadCourses();
+    loadAdminCourses();
+  });
+
+  async function deleteCourse(id) {
+    if (!confirm('Delete this course and all its lessons?')) return;
+    const lessonsSnap = await getDocs(collection(db, 'courses', id, 'lessons'));
+    for (const l of lessonsSnap.docs) await deleteDoc(l.ref);
+    await deleteDoc(doc(db, 'courses', id));
+    showToast('Course deleted', 'success');
+    await loadCourses();
+    loadAdminCourses();
+  }
+
+  // Lesson form
+  async function openLessonForm(courseId, lessonId) {
+    editingLessonId = lessonId;
+    editingLessonCourseId = courseId;
+    const modal = document.getElementById('lesson-form-modal');
+    let lesson = null;
+    if (lessonId) {
+      const snap = await getDoc(doc(db, 'courses', courseId, 'lessons', lessonId));
+      lesson = snap.data();
+    }
+    document.getElementById('lesson-form-title').textContent = lessonId ? 'Edit Lesson' : 'Add Lesson';
+    document.getElementById('lf-title').value = lesson?.title || '';
+    document.getElementById('lf-content').value = lesson?.content || '';
+    document.getElementById('lf-video').value = lesson?.videoUrl || '';
+    document.getElementById('lf-type').value = lesson?.type || 'grammar';
+    document.getElementById('lf-xp').value = lesson?.xp || 30;
+    document.getElementById('lf-vocab').value = lesson?.vocabulary || '[]';
+    document.getElementById('lf-quiz').value = lesson?.quiz || '[]';
+    document.getElementById('lf-premium').checked = lesson?.premium || false;
+    modal.classList.remove('hidden');
+  }
+
+  document.getElementById('lesson-form-cancel').addEventListener('click', () => {
+    document.getElementById('lesson-form-modal').classList.add('hidden');
+  });
+  document.getElementById('lesson-form-save').addEventListener('click', async () => {
+    const data = {
+      title: document.getElementById('lf-title').value.trim(),
+      content: document.getElementById('lf-content').value.trim(),
+      videoUrl: document.getElementById('lf-video').value.trim(),
+      type: document.getElementById('lf-type').value,
+      xp: parseInt(document.getElementById('lf-xp').value) || 30,
+      vocabulary: document.getElementById('lf-vocab').value.trim(),
+      quiz: document.getElementById('lf-quiz').value.trim(),
+      premium: document.getElementById('lf-premium').checked,
+      updatedAt: serverTimestamp()
+    };
+    if (!data.title) return showToast('Title is required', 'error');
+    const cRef = collection(db, 'courses', editingLessonCourseId, 'lessons');
+    if (editingLessonId) {
+      await updateDoc(doc(cRef, editingLessonId), data);
+      showToast('Lesson updated!', 'success');
+    } else {
+      const count = (await getDocs(cRef)).size;
+      await addDoc(cRef, { ...data, order: count + 1, createdAt: serverTimestamp() });
+      await updateDoc(doc(db, 'courses', editingLessonCourseId), { lessonsCount: count + 1 });
+      showToast('Lesson added!', 'success');
+    }
+    document.getElementById('lesson-form-modal').classList.add('hidden');
+    await loadCourses();
+    loadAdminCourses();
+  });
+
+  async function deleteLesson(courseId, lessonId) {
+    if (!confirm('Delete this lesson?')) return;
+    await deleteDoc(doc(db, 'courses', courseId, 'lessons', lessonId));
+    const count = (await getDocs(collection(db, 'courses', courseId, 'lessons'))).size;
+    await updateDoc(doc(db, 'courses', courseId), { lessonsCount: count });
+    showToast('Lesson deleted', 'success');
+    await loadCourses();
+    loadAdminCourses();
+  }
+
+  // Admin nav
+  document.querySelectorAll('.admin-nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.admin-nav-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.admin-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById(`admin-${btn.getAttribute('data-admin')}`).classList.add('active');
+    });
+  });
+
+  // Notifications
+  document.getElementById('send-notif-btn').addEventListener('click', async () => {
+    const title = document.getElementById('notif-title-input').value.trim();
+    const message = document.getElementById('notif-msg-input').value.trim();
+    const type = document.getElementById('notif-type-input').value;
+    if (!title || !message) return showToast('Title and message required', 'error');
+    await addDoc(collection(db, 'notifications'), { title, message, type, createdAt: serverTimestamp() });
+    document.getElementById('notif-title-input').value = '';
+    document.getElementById('notif-msg-input').value = '';
+    showToast('Notification sent to all users!', 'success');
+    loadSentNotifications();
+  });
+
+  async function loadSentNotifications() {
+    const snap = await getDocs(query(collection(db, 'notifications'), orderBy('createdAt', 'desc'), limit(10)));
+    const list = document.getElementById('sent-notifs-list');
+    list.innerHTML = '';
+    snap.forEach(d => {
+      const n = d.data();
+      const el = document.createElement('div');
+      el.className = `admin-notif-row notif-${n.type}`;
+      el.innerHTML = `
+        <strong>${n.title}</strong>
+        <p>${n.message}</p>
+        <div class="admin-notif-actions">
+          <small>${n.createdAt?.toDate?.()?.toLocaleDateString?.() || 'Recent'}</small>
+          <button class="btn-danger small" onclick="deleteNotif('${d.id}')">Delete</button>
+        </div>
+      `;
+      list.appendChild(el);
+    });
+  }
+
+  window.deleteNotif = async (id) => {
+    await deleteDoc(doc(db, 'notifications', id));
+    showToast('Notification deleted', 'success');
+    loadSentNotifications();
+  };
+
+  // Save settings
+  document.getElementById('save-settings-btn').addEventListener('click', async () => {
+    await setDoc(doc(db, 'settings', 'platform'), {
+      name: document.getElementById('setting-name').value,
+      headline: document.getElementById('setting-headline').value,
+      premiumPrice: parseInt(document.getElementById('setting-premium-price').value) || 199,
+      ieltsPrice: parseInt(document.getElementById('setting-ielts-price').value) || 499,
+      updatedAt: serverTimestamp()
+    });
+    showToast('Settings saved!', 'success');
+  });
+
+  // ============================================================
+  // TOAST & XP POPUP
+  // ============================================================
+  function showToast(message, type = 'info') {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    container.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 50);
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 300);
+    }, 3500);
+  }
+
+  function showXPPopup(text) {
+    const popup = document.getElementById('xp-popup');
+    document.getElementById('xp-popup-text').textContent = text;
+    popup.classList.remove('hidden');
+    setTimeout(() => popup.classList.add('hidden'), 2000);
+  }
+
+  // ============================================================
+  // TOPBAR USER CLICK → PROFILE
+  // ============================================================
+  document.getElementById('topbar-user').addEventListener('click', () => navigateTo('profile'));
+
+  // ============================================================
+  // START LISTENING NOTIFICATIONS
+  // ============================================================
+  listenNotifications();
+
+</script>
+<script src="app.js"></script>
+</body>
+</html>
